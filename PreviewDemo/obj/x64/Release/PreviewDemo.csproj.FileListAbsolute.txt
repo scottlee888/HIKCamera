@@ -1,0 +1,8 @@
+D:\VS Projects\HIKVision\1-Preview-PreviewDemo\1-Preview-PreviewDemo\PreviewDemo\bin\PreviewDemo.exe.config
+D:\VS Projects\HIKVision\1-Preview-PreviewDemo\1-Preview-PreviewDemo\PreviewDemo\bin\PreviewDemo.exe
+D:\VS Projects\HIKVision\1-Preview-PreviewDemo\1-Preview-PreviewDemo\PreviewDemo\obj\x64\Release\PreviewDemo.csproj.AssemblyReference.cache
+D:\VS Projects\HIKVision\1-Preview-PreviewDemo\1-Preview-PreviewDemo\PreviewDemo\obj\x64\Release\PreviewDemo.PreSet.resources
+D:\VS Projects\HIKVision\1-Preview-PreviewDemo\1-Preview-PreviewDemo\PreviewDemo\obj\x64\Release\PreviewDemo.Preview.resources
+D:\VS Projects\HIKVision\1-Preview-PreviewDemo\1-Preview-PreviewDemo\PreviewDemo\obj\x64\Release\PreviewDemo.csproj.GenerateResource.cache
+D:\VS Projects\HIKVision\1-Preview-PreviewDemo\1-Preview-PreviewDemo\PreviewDemo\obj\x64\Release\PreviewDemo.csproj.CoreCompileInputs.cache
+D:\VS Projects\HIKVision\1-Preview-PreviewDemo\1-Preview-PreviewDemo\PreviewDemo\obj\x64\Release\PreviewDemo.exe
