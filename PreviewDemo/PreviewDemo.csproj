@@ -135,6 +135,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logic.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Settings.Designer.cs" />
     <Content Include="App.ico" />
     <Compile Include="AssemblyInfo.cs">

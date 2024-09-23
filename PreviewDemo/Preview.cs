@@ -14,7 +14,7 @@ namespace PreviewDemo
 	/// <summary>
 	/// Form1 的摘要说明。
 	/// </summary>
-	public class Preview : System.Windows.Forms.Form
+	public partial class Preview : System.Windows.Forms.Form
 	{
         private uint iLastErr = 0;
 		private Int32 m_lUserID = -1;
@@ -35,21 +35,10 @@ namespace PreviewDemo
 		private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnPreview;
 		private System.Windows.Forms.PictureBox RealPlayWnd;
-        private Label label9;
         private Label label10;
         private Button btnBMP;
         private Button btnJPEG;
-        private Label label11;
-        private Label label12;
-        private Label label13;
-        private TextBox textBoxChannel;
         private Button btnRecord;
-        private Label label14;
-        private Button btn_Exit;
-        private Button btnVioceTalk;
-        private Label label16;
-        private Label label17;
-        private TextBox textBoxID;
         /*private Button PtzGet;
         private Button PtzSet;*/
         private Label label19;
@@ -61,7 +50,8 @@ namespace PreviewDemo
         private Label label21;
         private Label label22;
         private Button PreSet;
-        private Label label23;
+        private Button button1;
+        private Button button2;
 
         //private GroupBox groupBox1;
 
@@ -133,23 +123,13 @@ namespace PreviewDemo
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnPreview = new System.Windows.Forms.Button();
             this.RealPlayWnd = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.btnBMP = new System.Windows.Forms.Button();
             this.btnJPEG = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBoxChannel = new System.Windows.Forms.TextBox();
             this.btnRecord = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.btn_Exit = new System.Windows.Forms.Button();
-            this.btnVioceTalk = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBoxID = new System.Windows.Forms.TextBox();
             this.PreSet = new System.Windows.Forms.Button();
-            this.label23 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.RealPlayWnd)).BeginInit();
             this.SuspendLayout();
             // 
@@ -208,15 +188,6 @@ namespace PreviewDemo
             this.RealPlayWnd.TabIndex = 4;
             this.RealPlayWnd.TabStop = false;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(15, 511);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 13);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "preview";
-            // 
             // label10
             // 
             this.label10.Location = new System.Drawing.Point(0, 0);
@@ -244,41 +215,6 @@ namespace PreviewDemo
             this.btnJPEG.UseVisualStyleBackColor = true;
             this.btnJPEG.Click += new System.EventHandler(this.btnJPEG_Click);
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(94, 511);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(69, 13);
-            this.label11.TabIndex = 17;
-            this.label11.Text = "BMP capture";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(178, 511);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(73, 13);
-            this.label12.TabIndex = 18;
-            this.label12.Text = "JPEG capture";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(14, 484);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(126, 13);
-            this.label13.TabIndex = 19;
-            this.label13.Text = "preview/capture channel";
-            // 
-            // textBoxChannel
-            // 
-            this.textBoxChannel.Location = new System.Drawing.Point(142, 480);
-            this.textBoxChannel.Name = "textBoxChannel";
-            this.textBoxChannel.Size = new System.Drawing.Size(46, 20);
-            this.textBoxChannel.TabIndex = 6;
-            this.textBoxChannel.Text = "1";
-            // 
             // btnRecord
             // 
             this.btnRecord.Location = new System.Drawing.Point(266, 530);
@@ -289,64 +225,9 @@ namespace PreviewDemo
             this.btnRecord.UseVisualStyleBackColor = true;
             this.btnRecord.Click += new System.EventHandler(this.btnRecord_Click);
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(267, 511);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(79, 13);
-            this.label14.TabIndex = 22;
-            this.label14.Text = "client recording";
-            // 
-            // btn_Exit
-            // 
-            this.btn_Exit.Location = new System.Drawing.Point(365, 571);
-            this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(63, 30);
-            this.btn_Exit.TabIndex = 11;
-            this.btn_Exit.Tag = "";
-            this.btn_Exit.Text = "Exit";
-            this.btn_Exit.UseVisualStyleBackColor = true;
-            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
-            // 
-            // btnVioceTalk
-            // 
-            this.btnVioceTalk.Location = new System.Drawing.Point(15, 595);
-            this.btnVioceTalk.Name = "btnVioceTalk";
-            this.btnVioceTalk.Size = new System.Drawing.Size(63, 32);
-            this.btnVioceTalk.TabIndex = 25;
-            this.btnVioceTalk.Text = "Start Talk";
-            this.btnVioceTalk.UseVisualStyleBackColor = true;
-            this.btnVioceTalk.Click += new System.EventHandler(this.btnVioceTalk_Click);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(15, 577);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(77, 13);
-            this.label16.TabIndex = 26;
-            this.label16.Text = "TwoWayAudio";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(198, 483);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(52, 13);
-            this.label17.TabIndex = 27;
-            this.label17.Text = "stream ID";
-            // 
-            // textBoxID
-            // 
-            this.textBoxID.Location = new System.Drawing.Point(250, 479);
-            this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(188, 20);
-            this.textBoxID.TabIndex = 28;
-            // 
             // PreSet
             // 
-            this.PreSet.Location = new System.Drawing.Point(96, 595);
+            this.PreSet.Location = new System.Drawing.Point(92, 582);
             this.PreSet.Name = "PreSet";
             this.PreSet.Size = new System.Drawing.Size(81, 31);
             this.PreSet.TabIndex = 31;
@@ -354,36 +235,35 @@ namespace PreviewDemo
             this.PreSet.UseVisualStyleBackColor = true;
             this.PreSet.Click += new System.EventHandler(this.PreSet_Click);
             // 
-            // label23
+            // button1
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(99, 577);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(63, 13);
-            this.label23.TabIndex = 32;
-            this.label23.Text = "PTZ control";
+            this.button1.Location = new System.Drawing.Point(209, 582);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(69, 31);
+            this.button1.TabIndex = 38;
+            this.button1.Text = "Zoom1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(293, 582);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(69, 31);
+            this.button2.TabIndex = 39;
+            this.button2.Text = "Zoom2";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // Preview
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(531, 687);
-            this.Controls.Add(this.label23);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.PreSet);
-            this.Controls.Add(this.textBoxID);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.btnVioceTalk);
-            this.Controls.Add(this.btn_Exit);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.btnRecord);
-            this.Controls.Add(this.textBoxChannel);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.btnJPEG);
             this.Controls.Add(this.btnBMP);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.RealPlayWnd);
             this.Controls.Add(this.btnPreview);
             this.Controls.Add(this.btnLogin);
@@ -394,10 +274,10 @@ namespace PreviewDemo
             this.Name = "Preview";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Preview";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Preview_FormClosing);
             this.Load += new System.EventHandler(this.Preview_Load);
             ((System.ComponentModel.ISupportInitialize)(this.RealPlayWnd)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
 		}
 		#endregion
@@ -424,205 +304,24 @@ namespace PreviewDemo
 
 		private void btnPreview_Click(object sender, System.EventArgs e)
 		{
-            if(m_lUserID < 0)
-            {
-                MessageBox.Show("Please login the device firstly");
-                return;
-            }
+            Camera_LiveView();
+        }
 
-            if (m_lRealHandle < 0)
-            {
-                CHCNetSDK.NET_DVR_PREVIEWINFO lpPreviewInfo = new CHCNetSDK.NET_DVR_PREVIEWINFO();
-                lpPreviewInfo.hPlayWnd = RealPlayWnd.Handle;//预览窗口
-                lpPreviewInfo.lChannel = Int16.Parse(textBoxChannel.Text);//预te览的设备通道
-                lpPreviewInfo.dwStreamType = 0;//码流类型：0-主码流，1-子码流，2-码流3，3-码流4，以此类推
-                lpPreviewInfo.dwLinkMode = 0;//连接方式：0- TCP方式，1- UDP方式，2- 多播方式，3- RTP方式，4-RTP/RTSP，5-RSTP/HTTP 
-                lpPreviewInfo.bBlocked = true; //0- 非阻塞取流，1- 阻塞取流
-                lpPreviewInfo.dwDisplayBufNum = 1; //播放库播放缓冲区最大缓冲帧数
-                lpPreviewInfo.byProtoType = 0;
-                lpPreviewInfo.byPreviewMode = 0;
-
-
-                if (textBoxID.Text != "")
-                {
-                    lpPreviewInfo.lChannel = -1;
-                    byte[] byStreamID = System.Text.Encoding.Default.GetBytes(textBoxID.Text);
-                    lpPreviewInfo.byStreamID = new byte[32];
-                    byStreamID.CopyTo(lpPreviewInfo.byStreamID, 0);
-                }
-
-
-                if (RealData == null)
-                {
-                    RealData = new CHCNetSDK.REALDATACALLBACK(RealDataCallBack);//预览实时流回调函数
-                }
-                
-                IntPtr pUser = new IntPtr();//用户数据
-
-                //打开预览 Start live view 
-                m_lRealHandle = CHCNetSDK.NET_DVR_RealPlay_V40(m_lUserID, ref lpPreviewInfo, null/*RealData*/, pUser);
-                if (m_lRealHandle < 0)
-                {
-                    iLastErr = CHCNetSDK.NET_DVR_GetLastError();
-                    str = "NET_DVR_RealPlay_V40 failed, error code= " + iLastErr; //预览失败，输出错误号
-                    MessageBox.Show(str);
-                    return;
-                }
-                else
-                {
-                    //预览成功
-                    btnPreview.Text = "Stop Live View";
-                }
-            }
-            else
-            {
-                //停止预览 Stop live view 
-                if (!CHCNetSDK.NET_DVR_StopRealPlay(m_lRealHandle))
-                {
-                    iLastErr = CHCNetSDK.NET_DVR_GetLastError();
-                    str = "NET_DVR_StopRealPlay failed, error code= " + iLastErr;
-                    MessageBox.Show(str);
-                    return;
-                }
-                m_lRealHandle = -1;
-                btnPreview.Text = "Live View";
-
-            }
-            return;
-		}
-
-        public void RealDataCallBack(Int32 lRealHandle, UInt32 dwDataType, IntPtr pBuffer, UInt32 dwBufSize, IntPtr pUser)
-		{
-            if (dwBufSize > 0)
-            {
-                byte[] sData = new byte[dwBufSize];
-                Marshal.Copy(pBuffer, sData, 0, (Int32)dwBufSize);
-
-                string str = "实时流数据.ps";
-                FileStream fs = new FileStream(str, FileMode.Create);
-                int iLen = (int)dwBufSize;
-                fs.Write(sData, 0, iLen);
-                fs.Close();            
-            }
-		}
+        
 
         private void btnBMP_Click(object sender, EventArgs e)
         {
-            string sBmpPicFileName;
-            //图片保存路径和文件名 the path and file name to save
-            sBmpPicFileName = "BMP_test.bmp"; 
-
-            //BMP抓图 Capture a BMP picture
-            if (!CHCNetSDK.NET_DVR_CapturePicture(m_lRealHandle, sBmpPicFileName))
-            {
-                iLastErr = CHCNetSDK.NET_DVR_GetLastError();
-                str = "NET_DVR_CapturePicture failed, error code= " + iLastErr;
-                MessageBox.Show(str);
-                return;
-            }
-            else
-            {
-                str = "Successful to capture the BMP file and the saved file is " + sBmpPicFileName;
-                MessageBox.Show(str); 
-            }
-            return;
+            Camera_SaveBMP("TEST.bmp");
         }
 
         private void btnJPEG_Click(object sender, EventArgs e)
         {
-            string sJpegPicFileName;
-            //图片保存路径和文件名 the path and file name to save
-            sJpegPicFileName = "JPEG_test.jpg";
-
-            int lChannel = Int16.Parse(textBoxChannel.Text); //通道号 Channel number
-
-            CHCNetSDK.NET_DVR_JPEGPARA lpJpegPara = new CHCNetSDK.NET_DVR_JPEGPARA();
-            lpJpegPara.wPicQuality = 0; //图像质量 Image quality
-            lpJpegPara.wPicSize = 0xff; //抓图分辨率 Picture size: 2- 4CIF，0xff- Auto(使用当前码流分辨率)，抓图分辨率需要设备支持，更多取值请参考SDK文档
-
-            //JPEG抓图 Capture a JPEG picture
-            if (!CHCNetSDK.NET_DVR_CaptureJPEGPicture(m_lUserID, lChannel, ref lpJpegPara, sJpegPicFileName))
-            {
-                iLastErr = CHCNetSDK.NET_DVR_GetLastError();
-                str = "NET_DVR_CaptureJPEGPicture failed, error code= " + iLastErr;
-                MessageBox.Show(str);
-                return;
-            }
-            else
-            {
-                str = "Successful to capture the JPEG file and the saved file is " + sJpegPicFileName;
-                MessageBox.Show(str);
-            }
-            return;
+            Camera_Save_JPG("TEST.bmp");
         }
 
         private void btnRecord_Click(object sender, EventArgs e)
         {
-            //录像保存路径和文件名 the path and file name to save
-            string sVideoFileName;
-            sVideoFileName = "Record_test.mp4";
-
-            if (m_bRecord == false)
-            {
-                //强制I帧 Make a I frame
-                int lChannel = Int16.Parse(textBoxChannel.Text); //通道号 Channel number
-                CHCNetSDK.NET_DVR_MakeKeyFrame(m_lUserID, lChannel);
-
-                //开始录像 Start recording
-                if (!CHCNetSDK.NET_DVR_SaveRealData(m_lRealHandle, sVideoFileName))
-                {
-                    iLastErr = CHCNetSDK.NET_DVR_GetLastError();
-                    str = "NET_DVR_SaveRealData failed, error code= " + iLastErr;
-                    MessageBox.Show(str);
-                    return;
-                }
-                else
-                {                  
-                    btnRecord.Text = "Stop Record";
-                    m_bRecord = true;
-                }
-            }
-            else
-            {
-                //停止录像 Stop recording
-                if (!CHCNetSDK.NET_DVR_StopSaveRealData(m_lRealHandle))
-                {
-                    iLastErr = CHCNetSDK.NET_DVR_GetLastError();
-                    str = "NET_DVR_StopSaveRealData failed, error code= " + iLastErr;
-                    MessageBox.Show(str);
-                    return;
-                }
-                else
-                {
-                    str = "Successful to stop recording and the saved file is " + sVideoFileName;
-                    MessageBox.Show(str);
-                    btnRecord.Text = "Start Record";
-                    m_bRecord = false;
-                }            
-            }
-
-            return;
-        }
-
-        private void btn_Exit_Click(object sender, EventArgs e)
-        {
-            //停止预览 Stop live view 
-            if (m_lRealHandle >= 0)
-            {
-                CHCNetSDK.NET_DVR_StopRealPlay(m_lRealHandle);
-                m_lRealHandle = -1;
-            }
-
-            //注销登录 Logout the device
-            if (m_lUserID >= 0)
-            {
-                CHCNetSDK.NET_DVR_Logout(m_lUserID);
-                m_lUserID = -1;
-            }
-
-            CHCNetSDK.NET_DVR_Cleanup();
-
-            Application.Exit();
+            Camera_RecordVideo("TEST.mp4");
         }
 
         private void btnPTZ_Click(object sender, EventArgs e)
@@ -630,136 +329,16 @@ namespace PreviewDemo
 
         }
 
-        public void VoiceDataCallBack(int lVoiceComHandle, IntPtr pRecvDataBuffer, uint dwBufSize, byte byAudioFlag, System.IntPtr pUser)
-        {
-            byte[] sString = new byte[dwBufSize];
-            Marshal.Copy(pRecvDataBuffer, sString, 0, (Int32)dwBufSize);
+       
 
-            if (byAudioFlag ==0)
-            {
-                //将缓冲区里的音频数据写入文件 save the data into a file
-                string str = "PC采集音频文件.pcm";
-                FileStream fs = new FileStream(str, FileMode.Create);
-                int iLen = (int)dwBufSize;
-                fs.Write(sString, 0, iLen);
-                fs.Close();
-            }
-            if (byAudioFlag == 1)
-            {
-                //将缓冲区里的音频数据写入文件 save the data into a file
-                string str = "设备音频文件.pcm";
-                FileStream fs = new FileStream(str, FileMode.Create);
-                int iLen = (int)dwBufSize;
-                fs.Write(sString, 0, iLen);
-                fs.Close();
-            }
-
-        }
-
-        private void btnVioceTalk_Click(object sender, EventArgs e)
-        {
-            if (m_bTalk == false)
-            {
-                //开始语音对讲 Start two-way talk
-                CHCNetSDK.VOICEDATACALLBACKV30 VoiceData = new CHCNetSDK.VOICEDATACALLBACKV30(VoiceDataCallBack);//预览实时流回调函数
-
-                lVoiceComHandle = CHCNetSDK.NET_DVR_StartVoiceCom_V30(m_lUserID, 1, true, VoiceData, IntPtr.Zero);
-                //bNeedCBNoEncData [in]需要回调的语音数据类型：0- 编码后的语音数据，1- 编码前的PCM原始数据
-
-                if (lVoiceComHandle < 0)
-                {
-                    iLastErr = CHCNetSDK.NET_DVR_GetLastError();
-                    str = "NET_DVR_StartVoiceCom_V30 failed, error code= " + iLastErr;
-                    MessageBox.Show(str);
-                    return;
-                }
-                else
-                {
-                    btnVioceTalk.Text = "Stop Talk";
-                    m_bTalk = true;
-                }
-            }
-            else
-            {
-                //停止语音对讲 Stop two-way talk
-                if (!CHCNetSDK.NET_DVR_StopVoiceCom(lVoiceComHandle))
-                {
-                    iLastErr = CHCNetSDK.NET_DVR_GetLastError();
-                    str = "NET_DVR_StopVoiceCom failed, error code= " + iLastErr;
-                    MessageBox.Show(str);
-                    return;
-                }
-                else
-                {
-                    btnVioceTalk.Text = "Start Talk";
-                    m_bTalk = false;
-                }
-            }
-        }
-
-        private void label18_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label20_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Preview_Load(object sender, EventArgs e)
         {
             Camera_Login();
+            Camera_LiveView();
         }
 
-        private void Camera_Login()
-        {
-            if (m_lUserID < 0)
-            {
-                string DVRIPAddress = "192.168.1.64"; //设备IP地址或者域名
-                Int16 DVRPortNumber = 8000;//设备服务端口号
-                string DVRUserName = "admin";//设备登录用户名
-                string DVRPassword = "Admin123";//设备登录密码
-
-                CHCNetSDK.NET_DVR_DEVICEINFO_V30 DeviceInfo = new CHCNetSDK.NET_DVR_DEVICEINFO_V30();
-
-                //登录设备 Login the device
-                m_lUserID = CHCNetSDK.NET_DVR_Login_V30(DVRIPAddress, DVRPortNumber, DVRUserName, DVRPassword, ref DeviceInfo);
-                if (m_lUserID < 0)
-                {
-                    iLastErr = CHCNetSDK.NET_DVR_GetLastError();
-                    str = "NET_DVR_Login_V30 failed, error code= " + iLastErr; //登录失败，输出错误号
-                    MessageBox.Show(str);
-                    return;
-                }
-                else
-                {
-                    //登录成功
-                    MessageBox.Show("Login Success!");
-                    btnLogin.Text = "Logout";
-                }
-
-            }
-            else
-            {
-                //注销登录 Logout the device
-                if (m_lRealHandle >= 0)
-                {
-                    MessageBox.Show("Please stop live view firstly");
-                    return;
-                }
-
-                if (!CHCNetSDK.NET_DVR_Logout(m_lUserID))
-                {
-                    iLastErr = CHCNetSDK.NET_DVR_GetLastError();
-                    str = "NET_DVR_Logout failed, error code= " + iLastErr;
-                    MessageBox.Show(str);
-                    return;
-                }
-                m_lUserID = -1;
-                btnLogin.Text = "Login";
-            }
-        }
+       
 
         private void Ptz_Set_Click(object sender, EventArgs e)
         {
@@ -774,6 +353,11 @@ namespace PreviewDemo
             dlg.m_lRealHandle = m_lRealHandle;
             dlg.ShowDialog();
             
+        }
+
+        private void Preview_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application_Exit();
         }
     }
 }
