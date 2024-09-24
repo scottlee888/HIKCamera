@@ -38,7 +38,6 @@ namespace PreviewDemo
         private Label label10;
         private Button btnBMP;
         private Button btnJPEG;
-        private Button btnRecord;
         /*private Button PtzGet;
         private Button PtzSet;*/
         private Label label19;
@@ -50,7 +49,6 @@ namespace PreviewDemo
         private Label label21;
         private Label label22;
         private Button PreSet;
-        private Button button1;
         private Button button2;
 
         //private GroupBox groupBox1;
@@ -126,9 +124,7 @@ namespace PreviewDemo
             this.label10 = new System.Windows.Forms.Label();
             this.btnBMP = new System.Windows.Forms.Button();
             this.btnJPEG = new System.Windows.Forms.Button();
-            this.btnRecord = new System.Windows.Forms.Button();
             this.PreSet = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.RealPlayWnd)).BeginInit();
             this.SuspendLayout();
@@ -163,7 +159,7 @@ namespace PreviewDemo
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(362, 35);
+            this.btnLogin.Location = new System.Drawing.Point(412, 25);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(66, 47);
             this.btnLogin.TabIndex = 1;
@@ -172,7 +168,7 @@ namespace PreviewDemo
             // 
             // btnPreview
             // 
-            this.btnPreview.Location = new System.Drawing.Point(14, 530);
+            this.btnPreview.Location = new System.Drawing.Point(30, 8);
             this.btnPreview.Name = "btnPreview";
             this.btnPreview.Size = new System.Drawing.Size(64, 32);
             this.btnPreview.TabIndex = 7;
@@ -197,7 +193,7 @@ namespace PreviewDemo
             // 
             // btnBMP
             // 
-            this.btnBMP.Location = new System.Drawing.Point(92, 531);
+            this.btnBMP.Location = new System.Drawing.Point(108, 9);
             this.btnBMP.Name = "btnBMP";
             this.btnBMP.Size = new System.Drawing.Size(66, 32);
             this.btnBMP.TabIndex = 8;
@@ -207,7 +203,7 @@ namespace PreviewDemo
             // 
             // btnJPEG
             // 
-            this.btnJPEG.Location = new System.Drawing.Point(173, 530);
+            this.btnJPEG.Location = new System.Drawing.Point(189, 8);
             this.btnJPEG.Name = "btnJPEG";
             this.btnJPEG.Size = new System.Drawing.Size(81, 32);
             this.btnJPEG.TabIndex = 9;
@@ -215,19 +211,9 @@ namespace PreviewDemo
             this.btnJPEG.UseVisualStyleBackColor = true;
             this.btnJPEG.Click += new System.EventHandler(this.btnJPEG_Click);
             // 
-            // btnRecord
-            // 
-            this.btnRecord.Location = new System.Drawing.Point(266, 530);
-            this.btnRecord.Name = "btnRecord";
-            this.btnRecord.Size = new System.Drawing.Size(83, 32);
-            this.btnRecord.TabIndex = 10;
-            this.btnRecord.Text = "Start Record";
-            this.btnRecord.UseVisualStyleBackColor = true;
-            this.btnRecord.Click += new System.EventHandler(this.btnRecord_Click);
-            // 
             // PreSet
             // 
-            this.PreSet.Location = new System.Drawing.Point(92, 582);
+            this.PreSet.Location = new System.Drawing.Point(108, 60);
             this.PreSet.Name = "PreSet";
             this.PreSet.Size = new System.Drawing.Size(81, 31);
             this.PreSet.TabIndex = 31;
@@ -235,22 +221,13 @@ namespace PreviewDemo
             this.PreSet.UseVisualStyleBackColor = true;
             this.PreSet.Click += new System.EventHandler(this.PreSet_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(209, 582);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 31);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "Zoom1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(293, 582);
+            this.button2.Location = new System.Drawing.Point(298, 8);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(69, 31);
             this.button2.TabIndex = 39;
-            this.button2.Text = "Zoom2";
+            this.button2.Text = "btnZoom";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // Preview
@@ -258,9 +235,7 @@ namespace PreviewDemo
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(531, 687);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.PreSet);
-            this.Controls.Add(this.btnRecord);
             this.Controls.Add(this.btnJPEG);
             this.Controls.Add(this.btnBMP);
             this.Controls.Add(this.label10);
@@ -319,23 +294,17 @@ namespace PreviewDemo
             Camera_Save_JPG("TEST.bmp");
         }
 
-        private void btnRecord_Click(object sender, EventArgs e)
-        {
-            Camera_RecordVideo("TEST.mp4");
-        }
-
-        private void btnPTZ_Click(object sender, EventArgs e)
-        {
-
-        }
-
-       
-
 
         private void Preview_Load(object sender, EventArgs e)
         {
+            Start();
+        }
+
+        public void Start()
+        {
             Camera_Login();
             Camera_LiveView();
+            Camera_Z_Set(15);
         }
 
        

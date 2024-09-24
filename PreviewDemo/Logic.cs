@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PreviewDemo
 {
@@ -38,7 +39,7 @@ namespace PreviewDemo
                 else
                 {
                     //µÇÂ¼³É¹¦
-                    MessageBox.Show("Login Success!");
+                    //MessageBox.Show("Login Success!");
                     btnLogin.Text = "Logout";
                 }
 
@@ -84,7 +85,7 @@ namespace PreviewDemo
                 }
                 else
                 {
-                    btnRecord.Text = "Stop Record";
+                    //btnRecord.Text = "Stop Record";
                     m_bRecord = true;
                 }
             }
@@ -102,14 +103,14 @@ namespace PreviewDemo
                 {
                     str = "Successful to stop recording and the saved file is " + sVideoFileName;
                     MessageBox.Show(str);
-                    btnRecord.Text = "Start Record";
+                    //btnRecord.Text = "Start Record";
                     m_bRecord = false;
                 }
             }
 
             return;
         }
-        
+
         private void Application_Exit()
         {
             //Í£Ö¹Ô¤ÀÀ Stop live view 
@@ -131,7 +132,7 @@ namespace PreviewDemo
             Application.Exit();
         }
 
-        private void Camera_SaveBMP(string Filename)
+        public void Camera_SaveBMP(string Filename)
         {
             string sBmpPicFileName = "BMP_test.bmp";
 
@@ -173,6 +174,7 @@ namespace PreviewDemo
             return;
         }
 
+        //Camera_RecordVideo("TEST.mp4");
         private void Camera_RecordVideo(string FileName)
         {
             if (m_bRecord == false)
@@ -189,7 +191,7 @@ namespace PreviewDemo
                 }
                 else
                 {
-                    btnRecord.Text = "Stop Record";
+                    //btnRecord.Text = "Stop Record";
                     m_bRecord = true;
                 }
             }
@@ -207,7 +209,7 @@ namespace PreviewDemo
                 {
                     str = "Successful to stop recording and the saved file is " + FileName;
                     MessageBox.Show(str);
-                    btnRecord.Text = "Start Record";
+                    //btnRecord.Text = "Start Record";
                     m_bRecord = false;
                 }
             }
@@ -298,6 +300,49 @@ namespace PreviewDemo
                 fs.Write(sData, 0, iLen);
                 fs.Close();
             }
+        }
+
+        private void Camera_Z_Set(ushort Z_Setting)
+        {
+            //Z_Setting = 2;
+
+            int flag = 1;
+            float wPanPos, wTiltPos, wZoomPos;
+            String str1, str2, str3;
+
+            flag = 0;
+            m_struPtzCfg.wAction = 4;
+            //m_struPtzCfg.wZoomPos = (ushort)Z_Setting;
+
+            str3 = Convert.ToString((float)Z_Setting);
+            m_struPtzCfg.wZoomPos = (ushort)(Convert.ToUInt16(str3, 16));
+
+
+            while (flag == 0)
+            {
+
+                Int32 nSize = Marshal.SizeOf(m_struPtzCfg);
+                IntPtr ptrPtzCfg = Marshal.AllocHGlobal(nSize);
+                Marshal.StructureToPtr(m_struPtzCfg, ptrPtzCfg, false);
+
+                if (!CHCNetSDK.NET_DVR_SetDVRConfig(m_lUserID, CHCNetSDK.NET_DVR_SET_PTZPOS, 1, ptrPtzCfg, (UInt32)nSize))
+                {
+                    iLastErr = CHCNetSDK.NET_DVR_GetLastError();
+                    str = "NET_DVR_SetDVRConfig failed, error code= " + iLastErr;
+                    //设置POS参数失败
+                    MessageBox.Show(str);
+                    return;
+                }
+                else
+                {
+                    //MessageBox.Show("设置成功!");
+                    break;
+                }
+
+                Marshal.FreeHGlobal(ptrPtzCfg);
+
+            }
+            return;
         }
 
         //private void StartTalk()
